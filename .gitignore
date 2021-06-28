@@ -2,3 +2,4 @@ node_modules
 yarn.lock
 .env
 .idea
+yarn-error.log

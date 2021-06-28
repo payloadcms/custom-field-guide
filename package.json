@@ -14,8 +14,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "payload": "^0.7.2",
-    "react-color": "^2.19.3"
+    "payload": "^0.7.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",

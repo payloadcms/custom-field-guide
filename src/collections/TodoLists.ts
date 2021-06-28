@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types';
+import colorField from "../color-picker/config";
 
 const Todo: CollectionConfig = {
   slug: 'todos',
@@ -17,6 +18,7 @@ const Todo: CollectionConfig = {
       name: 'listName',
       type: 'text',
     },
+    colorField,
     {
       name: 'tasks',
       type: 'array',
@@ -29,7 +31,7 @@ const Todo: CollectionConfig = {
           name: 'complete',
           type: 'checkbox',
           defaultValue: false,
-        }
+        },
       ]
     },
   ],

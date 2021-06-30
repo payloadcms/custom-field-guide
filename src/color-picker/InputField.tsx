@@ -13,7 +13,7 @@ import { Button } from 'payload/components';
 import { Label } from 'payload/components/forms';
 
 // we can use existing Payload types easily
-import { Props } from 'payload/dist/admin/components/forms/field-types/Text/types';
+import { Props } from 'payload/components/fields/Text';
 
 // we'll import and reuse our existing validator function on the frontend, too
 import { validateHexColor } from './config';

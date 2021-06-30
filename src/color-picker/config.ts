@@ -9,7 +9,7 @@ export const validateHexColor = (value: string = ''): true | string => {
 const colorField: Field = {
   name: 'color',
   type: 'text',
-  validate: (value: string) => validateHexColor(value),
+  validate: validateHexColor,
   required: true,
   admin: {
     components: {

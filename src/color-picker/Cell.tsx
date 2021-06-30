@@ -1,5 +1,5 @@
-import React from "react";
-import { Props } from "payload/dist/admin/components/views/collections/List/Cell/types";
+import React from 'react';
+import { Props } from 'payload/components/views/Cell';
 import './styles.scss';
 
 const Cell: React.FC<Props> = (props) => {

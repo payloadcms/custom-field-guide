@@ -92,13 +92,14 @@ const InputField: React.FC<Props> = (props) => {
       {isAdding && (
         <div>
           <input
-            className="text"
+            className={`${baseClass}__input`}
             type="text"
             placeholder="#000000"
             onChange={(e) => setColorToAdd(e.target.value)}
             value={colorToAdd}
           />
           <Button
+            className={`${baseClass}__btn`}
             buttonStyle="primary"
             iconPosition="left"
             iconStyle="with-border"
@@ -109,6 +110,7 @@ const InputField: React.FC<Props> = (props) => {
             Add
           </Button>
           <Button
+            className={`${baseClass}__btn`}
             buttonStyle="secondary"
             iconPosition="left"
             iconStyle="with-border"

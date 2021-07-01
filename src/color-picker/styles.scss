@@ -1,4 +1,4 @@
-@import '~payload/scss/vars';
+@import '~payload/scss';
 .input {
   // Payload exports a mixin from the vars file for quickly applying formInput rules to the class for our input
   @include formInput

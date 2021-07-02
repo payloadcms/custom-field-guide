@@ -47,7 +47,6 @@ const InputField: React.FC<Props> = (props) => {
     setValue,
   } = useFieldType({
     path,
-    required,
     validate: validateHexColor,
   });
 
@@ -80,7 +79,7 @@ const InputField: React.FC<Props> = (props) => {
     setColorOptions(newOptions);
     // store the user color preferences for future use
     setPreference(preferenceKey, newOptions);
-  }, [colorOptions, setPreference, colorToAdd]);
+  }, [colorOptions, setPreference, colorToAdd, setIsAdding, setValue]);
 
   return (
     <div className={baseClass}>
@@ -124,7 +123,7 @@ const InputField: React.FC<Props> = (props) => {
       {!isAdding && (
         <Fragment>
           <ul className={`${baseClass}__colors`}>
-            {defaultColors.map((color, i) => (
+            {colorOptions.map((color, i) => (
                 <li key={i}>
                   <button
                     type="button"

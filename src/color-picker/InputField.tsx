@@ -50,10 +50,19 @@ const InputField: React.FC<Props> = (props) => {
     validate: validateHexColor,
   });
 
+  const { setValue: setListNameValue } = useFieldType({
+    path: 'listName',
+  });
+
   const { getPreference, setPreference } = usePreferences();
   const [colorOptions, setColorOptions] = useState(defaultColors);
   const [isAdding, setIsAdding] = useState(false);
   const [colorToAdd, setColorToAdd] = useState('');
+  // const [toggle, setToggle] = useState('');
+
+  const handleSetListName = () => {
+    setListNameValue(`${value} list`, true);
+  }
 
   useEffect(() => {
     const mergeColorsFromPreferences = async () => {
@@ -88,6 +97,8 @@ const InputField: React.FC<Props> = (props) => {
         label={label}
         required={required}
       />
+      <button onClick={handleSetListName} type="button">update</button>
+
       {isAdding && (
         <div>
           <input

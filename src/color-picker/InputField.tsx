@@ -45,7 +45,7 @@ const InputField: React.FC<Props> = (props) => {
   const {
     value = '',
     setValue,
-  } = useFieldType({
+  } = useFieldType<any>({
     path,
     validate: validateHexColor,
   });

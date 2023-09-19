@@ -12,6 +12,8 @@ import { Button } from 'payload/components';
 // we'll re-use the built in Label component directly from Payload
 import { Label } from 'payload/components/forms';
 
+import Error from 'payload/dist/admin/components/forms/Error/index';
+
 // we can use existing Payload types easily
 import { Props } from 'payload/components/fields/Text';
 
@@ -39,16 +41,23 @@ const InputField: React.FC<Props> = (props) => {
   const {
     path,
     label,
-    required
+    required,
+    validate,
   } = props;
 
   const {
-    value = '',
+    value = "",
     setValue,
+    errorMessage,
+    showError,
   } = useFieldType({
     path,
-    validate: validateHexColor,
+    validate,
   });
+  const classes = ["field-type", "text", baseClass, showError && "error"]
+    .filter(Boolean)
+    .join(" ");
+
 
   const { getPreference, setPreference } = usePreferences();
   const [colorOptions, setColorOptions] = useState(defaultColors);
@@ -82,12 +91,13 @@ const InputField: React.FC<Props> = (props) => {
   }, [colorOptions, setPreference, colorToAdd, setIsAdding, setValue]);
 
   return (
-    <div className={baseClass}>
+    <div className={classes}>
       <Label
         htmlFor={path}
         label={label}
         required={required}
       />
+      <Error showError={showError} message={errorMessage} />
       {isAdding && (
         <div>
           <input
@@ -122,7 +132,7 @@ const InputField: React.FC<Props> = (props) => {
       )}
       {!isAdding && (
         <Fragment>
-          <ul className={`${baseClass}__colors`}>
+          <ul className={`${baseClass}__colors ${showError ? 'error' : ''}`}>
             {colorOptions.map((color, i) => (
                 <li key={i}>
                   <button

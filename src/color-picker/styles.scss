@@ -27,6 +27,11 @@
     padding: 0;
     margin: 0;
   }
+
+  .error {
+    background-color: var(--theme-error-100);
+    border: 1px solid var(--theme-error-400);
+  }
 }
 
 .chip {

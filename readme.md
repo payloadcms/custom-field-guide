@@ -1,6 +1,6 @@
 # Custom Field Sample Project - Color Picker
 
-This is an example Payload CMS project that has a custom color picker field and was created for the blog post [Building a Custom Field for Payload](https://payloadcms.com/blog/build-a-custom-field-for-payload)
+This is an example Payload CMS project that has a custom color picker field and was created for the blog post [Building a Custom Field for Payload](https://payloadcms.com/blog/building-a-custom-field)
 
 ### Color Picker Field Features
 - Payload compatible field configuration
